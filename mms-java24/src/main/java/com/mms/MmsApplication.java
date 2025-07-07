@@ -13,8 +13,8 @@ public class MmsApplication implements CommandLineRunner {
 		SpringApplication.run(MmsApplication.class, args);
 	}
 
-	@Autowired
-	private MemberRepository memberRepository;
+//	@Autowired
+//	private MemberRepository memberRepository;
 
 	@Override
 	public void run(String... args) throws Exception {

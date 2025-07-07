@@ -1,11 +1,13 @@
 package com.mms.impl;
 
 import com.mms.entity.Member;
+import com.mms.exception.MemberNotFoundException;
 import com.mms.repository.MemberRepository;
 import com.mms.service.MemberService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -28,8 +30,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member getMemberById(Long id) {
-        return memberRepository.findById(id).orElse(null);
+    public Member getMemberById(Long id) throws MemberNotFoundException {
+        Optional<Member> member= memberRepository.findById(id);
+        if(!member.isPresent())
+            throw new MemberNotFoundException("Member not available");
+        return member.get();
     }
 
     @Override
@@ -40,5 +45,15 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public void deleteMemberById(Long id) {
         memberRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Member> getMemberByFirstName(String firstname) {
+        return memberRepository.findByFirstname(firstname);
+    }
+
+    @Override
+    public Member getMemberByPhone(String phone) {
+        return memberRepository.findByPhone(phone);
     }
 }

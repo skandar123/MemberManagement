@@ -1,0 +1,75 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/mms?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    password: ''
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  application:
+    name: mms
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/mms-qa?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    password: ''
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  application:
+    name: mms
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/mms-prod?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    password: ''
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  application:
+    name: mms
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
