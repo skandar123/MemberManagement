@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Member Management System (MMS)
 
 ### 📌 Overview
@@ -165,3 +166,7 @@ The project includes comprehensive tests:
 ### 👩‍💻 Author
 
 Sayantika Kandar
+=======
+# MemberManagement
+Application to manage members using Java, SpringBoot, Hibernate, MySQL, HTML, Bootstrap, Thymeleaf, Maven
+>>>>>>> 37cf5fc4c654983733bcd779855e96245cecd4da
