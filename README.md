@@ -165,7 +165,4 @@ The project includes comprehensive tests:
 ### 👩‍💻 Author
 
 Sayantika Kandar
-=======
-# MemberManagement
-Application to manage members using Java, SpringBoot, Hibernate, MySQL, HTML, Bootstrap, Thymeleaf, Maven
 
